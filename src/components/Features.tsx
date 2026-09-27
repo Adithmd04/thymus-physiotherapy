@@ -37,10 +37,8 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section className="border-y border-[#e2e8f0] bg-white py-14">
-      <div
-        className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-6 px-6 min-[561px]:grid-cols-2 min-[901px]:grid-cols-5"
-      >
+    <section className="py-14">
+      <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 gap-6 px-6 min-[561px]:grid-cols-2 min-[901px]:grid-cols-5">
         {FEATURES.map((f, i) => (
           <div
             key={f.title}
@@ -52,9 +50,7 @@ export default function Features() {
             <h3 className="mb-1 text-[0.95rem] font-bold text-[#0f172a]">
               {f.title}
             </h3>
-            <p className="text-[0.78rem] leading-6 text-[#475569]">
-              {f.desc}
-            </p>
+            <p className="text-[0.78rem] leading-6 text-[#475569]">{f.desc}</p>
           </div>
         ))}
       </div>

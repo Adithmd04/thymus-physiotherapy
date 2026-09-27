@@ -7,10 +7,8 @@ import { ArrowRightIcon } from "@/icons";
 
 export default function About() {
   return (
-    <section id="about-us" className="bg-white py-[5.5rem]">
-      <div
-        className="mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-16 px-6 min-[901px]:grid-cols-2"
-      >
+    <section id="about-us" className="py-24">
+      <div className="mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-16 px-6 min-[901px]:grid-cols-2">
         {/* Image side */}
         <div className="animate-fade-in relative">
           <div className="overflow-hidden rounded-[1.25rem] shadow-[0_10px_40px_rgba(0,0,0,0.14)]">
@@ -19,22 +17,18 @@ export default function About() {
               alt="MoveWell Physiotherapy Clinic Interior"
               width={560}
               height={420}
-              className="h-[420px] w-full object-cover"
+              className="w-full object-cover "
             />
           </div>
-          {/* Logo badge overlay */}
-          <div className="absolute left-6 top-6 flex items-center gap-2 rounded-xl bg-white px-4 py-3 shadow-[0_4px_16px_rgba(0,0,0,0.10)]">
-            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#0d9488] text-[0.85rem] font-extrabold text-white">
-              M
-            </div>
-            <div>
-              <div className="text-[0.8rem] font-extrabold text-[#0f172a]">
-                MoveWell
-              </div>
-              <div className="text-[0.6rem] font-semibold tracking-[0.1em] text-[#0d9488]">
-                PHYSIOTHERAPY
-              </div>
-            </div>
+          <div className="absolute max-w-48 max-h-16 left-3 top-2 flex items-center">
+            <Image
+              src="/images/thymusLogo_no_bg.png"
+              alt="Thymus Physiotherapy"
+              width={120}
+              height={48}
+              priority
+              className="rounded-lg object-contain"
+            />
           </div>
         </div>
 
@@ -43,13 +37,13 @@ export default function About() {
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-[#0d9488]">
             About Us
           </p>
-          <h2 className="mb-4 text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-[1.25] text-[#0f172a]">
+          <h2 className="mb-4 text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold leading-tight text-[#0f172a]">
             Your Recovery is Our Priority
           </h2>
           <p className="mb-8 leading-[1.8] text-[#475569]">
-            At MoveWell Physiotherapy, we combine advanced techniques with
-            compassionate care to help you move better, feel better, and live
-            a pain-free life.
+            At Thymus Physiotherapy, we combine advanced techniques with
+            compassionate care to help you move better, feel better, and live a
+            pain-free life.
           </p>
 
           {/* Metrics Component */}
