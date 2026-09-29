@@ -1,9 +1,32 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Metrics from "./Metrics";
-import { ArrowRightIcon } from "@/icons";
+import { MetricItem } from "@/types/types";
+import { RotateCwClock, UserPlus, User, Award } from "lucide-react";
+
+const STATS: MetricItem[] = [
+  {
+    icon: <RotateCwClock size={26} />,
+    value: "15+",
+    label: "Years of Experience",
+  },
+  {
+    icon: <UserPlus size={26} />,
+    value: "10K+",
+    label: "Patients Treated",
+  },
+  {
+    icon: <User size={26} />,
+    value: "20+",
+    label: "Expert Therapists",
+  },
+  {
+    icon: <Award size={26} />,
+    value: "98%",
+    label: "Patient Satisfaction",
+  },
+];
 
 export default function About() {
   return (
@@ -47,11 +70,11 @@ export default function About() {
           </p>
 
           {/* Metrics Component */}
-          <Metrics className="mb-8" />
+          <Metrics items={STATS} className="mb-8" />
 
-          <button className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl border-2 border-[#0d9488] bg-[#0d9488] px-6 py-[0.7rem] text-sm font-semibold text-white transition-[background,border-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:border-[#0f766e] hover:bg-[#0f766e] hover:shadow-[0_6px_20px_rgba(13,148,136,0.35)]">
+          {/* <button className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl border-2 border-[#0d9488] bg-[#0d9488] px-6 py-[0.7rem] text-sm font-semibold text-white transition-[background,border-color,transform,box-shadow] duration-200 hover:-translate-y-px hover:border-[#0f766e] hover:bg-[#0f766e] hover:shadow-[0_6px_20px_rgba(13,148,136,0.35)]">
             Learn More About Us <ArrowRightIcon size={16} />
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

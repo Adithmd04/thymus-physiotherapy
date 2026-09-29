@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { ChevronRight, CircleCheckBig } from "lucide-react";
 
@@ -12,11 +11,10 @@ const TRUST_POINTS = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-12 md:py-18 lg:py-20">
-      {/* Background decorative glows */}
-      <div className="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-teal-200/30 blur-3xl" />
-      <div className="pointer-events-none absolute top-1/3 -right-24 h-96 w-96 rounded-full bg-cyan-200/25 blur-3xl" />
-
+    <section
+      id="home"
+      className="relative overflow-hidden py-12 md:py-18 lg:py-16"
+    >
       <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-12 px-6 min-[901px]:grid-cols-2">
         {/* Left copy */}
         <div className="animate-fade-up">

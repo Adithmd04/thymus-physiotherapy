@@ -1,51 +1,14 @@
-import React from "react";
 import { cn } from "@/lib/cn";
-import {
-  ExperienceIcon,
-  PatientsTreatedIcon,
-  ExpertTherapistsIcon,
-  SatisfactionIcon,
-} from "@/icons";
-
-export interface MetricItem {
-  icon: React.ReactNode;
-  value: string;
-  label: string;
-}
-
-const STATS: MetricItem[] = [
-  {
-    icon: <ExperienceIcon size={26} />,
-    value: "15+",
-    label: "Years of Experience",
-  },
-  {
-    icon: <PatientsTreatedIcon size={26} />,
-    value: "10K+",
-    label: "Patients Treated",
-  },
-  {
-    icon: <ExpertTherapistsIcon size={26} />,
-    value: "20+",
-    label: "Expert Therapists",
-  },
-  {
-    icon: <SatisfactionIcon size={26} />,
-    value: "98%",
-    label: "Patient Satisfaction",
-  },
-];
+import { MetricItem } from "@/types/types";
 
 interface MetricsProps {
-  items?: MetricItem[];
+  items: MetricItem[];
   className?: string;
 }
 
-export default function Metrics({ items = STATS, className }: MetricsProps) {
+export default function Metrics({ items, className }: MetricsProps) {
   return (
-    <div
-      className={cn("grid grid-cols-2 gap-5", className)}
-    >
+    <div className={cn("grid grid-cols-2 gap-5", className)}>
       {items.map((s) => (
         <div
           key={s.label}
