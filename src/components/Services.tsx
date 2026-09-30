@@ -98,6 +98,7 @@ export default function Services() {
               src={activeService.image}
               alt={activeService.title}
               fill
+              sizes="100vw"
               priority
               className="object-cover object-center brightness-[0.25] contrast-[1.05] transition-all duration-700 ease-out"
             />

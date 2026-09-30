@@ -28,7 +28,7 @@ const FEATURES = [
 
 export default function About() {
   return (
-    <section id="about-us" className="overflow-hidden py-20 sm:py-24 lg:py-28">
+    <section id="about-us" className="overflow-hidden py-20 sm:py-24 lg:py-20">
       <div className="mx-auto w-full max-w-[1200px] px-6 lg:px-8">
         {/* Main content */}
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">

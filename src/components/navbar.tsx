@@ -14,16 +14,16 @@ import {
 
 const NAV_ITEMS = [
   { id: "home", label: "Home", href: "#home", icon: Home },
-  { id: "services", label: "Services", href: "#services", icon: HeartPulse },
   { id: "about-us", label: "About", href: "#about-us", icon: Info },
+  { id: "services", label: "Services", href: "#services", icon: HeartPulse },
   { id: "testimonials", label: "Reviews", href: "#testimonials", icon: Star },
   { id: "contact-us", label: "Contact", href: "#contact-us", icon: Mail },
 ];
 
 const MOBILE_ITEMS = [
   { id: "home", label: "Home", href: "#home", icon: Home },
-  { id: "services", label: "Services", href: "#services", icon: HeartPulse },
   { id: "about-us", label: "About", href: "#about-us", icon: Info },
+  { id: "services", label: "Services", href: "#services", icon: HeartPulse },
   { id: "testimonials", label: "Reviews", href: "#testimonials", icon: Star },
   {
     id: "contact-us",

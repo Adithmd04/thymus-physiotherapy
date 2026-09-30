@@ -4,9 +4,9 @@ import Image from "next/image";
 import { ChevronRight, CircleCheckBig } from "lucide-react";
 
 const TRUST_POINTS = [
-  "Direct Insurance Billing",
-  "No Referral Needed",
-  "Personalized 1-on-1 Care",
+  "Advanced Treatment",
+  "Expert Consultation",
+  "Home Based Care",
 ];
 
 export default function Hero() {
@@ -18,11 +18,6 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-12 px-6 min-[901px]:grid-cols-2">
         {/* Left copy */}
         <div className="animate-fade-up">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-200/60 bg-white/80 px-3.5 py-1.5 text-xs font-bold uppercase tracking-[0.12em] text-[#0d9488] shadow-xs backdrop-blur-xs">
-            <span className="h-2 w-2 rounded-full bg-[#0d9488]" />
-            Move Better. Feel Better. Live Better.
-          </div>
-
           <h1 className="mb-1 text-[clamp(2.3rem,4.5vw,3.6rem)] font-black leading-[1.1] text-[#0f172a]">
             Expert Care.
           </h1>
@@ -139,7 +134,7 @@ export default function Hero() {
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#0d9488]" />
               </span>
               <span className="text-xs font-bold text-[#0f172a]">
-                Accepting New Patients
+                Move Better. Feel Better. Live Better.
               </span>
             </div>
           </div>

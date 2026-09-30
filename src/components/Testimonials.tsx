@@ -176,23 +176,7 @@ export default function Testimonials() {
               {TESTIMONIALS.map((testimonial, index) => (
                 <article
                   key={`${testimonial.name}-${index}`}
-                  className="
-          group
-          min-w-70
-          shrink-0
-          rounded-[18px]
-          border
-          border-[#edf0f1]
-          bg-white
-          p-5
-          shadow-[0_4px_20px_rgba(15,23,42,0.04)]
-          transition-all
-          duration-300
-          hover:-translate-y-1
-          hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)]
-          sm:min-w-70
-          lg:min-w-75
-        "
+                  className="group min-w-70 shrink-0 rounded-[18px] border border-[#edf0f1] bg-white p-5 shadow-[0_4px_20px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(15,23,42,0.08)] sm:min-w-70 lg:min-w-75"
                 >
                   {/* Review */}
                   <div className="flex max-h-40 max-w-50 flex-col">
