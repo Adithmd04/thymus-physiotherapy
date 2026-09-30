@@ -1,7 +1,7 @@
 import { ServiceItem, TreatmentItem } from "@/types/types";
 
 // App-wide constants
-export const APP_NAME = "Thymus";
+export const APP_NAME = "Thymus Physiotherapy ";
 export const APP_DESCRIPTION = "A Next.js application";
 
 export const SERVICES: ServiceItem[] = [

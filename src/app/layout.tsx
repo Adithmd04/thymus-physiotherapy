@@ -1,9 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { APP_NAME } from "@/constants";
 
 export const metadata: Metadata = {
-  title: "Thymus Physiotherapy",
+  title: APP_NAME,
   description: "",
+  icons: {
+    apple: "/images/apple-touch-icon.png",
+    icon: [
+      {
+        url: "/images/thymus-favicon-16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/images/thymus-favicon-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/images/thymus-favicon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
