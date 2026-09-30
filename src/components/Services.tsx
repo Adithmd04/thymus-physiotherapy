@@ -90,7 +90,7 @@ export default function Services() {
       className="py-14 md:py-20 text-white relative overflow-hidden"
     >
       <div className="mx-auto w-full px-4 sm:px-6 lg:px-4">
-        <div className="relative h-225 w-full overflow-hidden rounded-2xl border border-white/10 bg-slate-950/80 shadow-[0_20px_60px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:h-212.5 lg:h-135">
+        <div className="relative h-225 w-full overflow-hidden rounded-2xl backdrop-blur-xl sm:h-212.5 lg:h-135">
           {/* Active Background Backdrop Image */}
           <div className="absolute inset-0 z-0">
             <Image
