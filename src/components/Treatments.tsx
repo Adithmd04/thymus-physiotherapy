@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, type CSSProperties } from "react";
+import Link from "next/link";
 import {
   Activity,
   ArrowRight,
@@ -210,13 +211,13 @@ export default function Treatments() {
                   right fit for your recovery.
                 </p>
 
-                <a
-                  href="/treatments"
+                <Link
+                  href="/clinics/physiotherapy#treatments"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0d9488] px-4 py-2.5 text-xs font-bold text-white transition-colors hover:bg-[#0f766e] md:px-6 md:py-3 md:text-sm"
                 >
                   Explore More
                   <ArrowRight size={16} strokeWidth={2} />
-                </a>
+                </Link>
               </div>
             </div>
 

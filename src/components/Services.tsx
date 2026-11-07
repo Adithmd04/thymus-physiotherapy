@@ -2,9 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import { SERVICES } from "@/constants";
+import { useBooking } from "@/components/booking/BookingContext";
 
 export default function Services() {
+  const { open } = useBooking();
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const isDraggingRef = useRef(false);
@@ -137,15 +141,24 @@ export default function Services() {
                     ))}
                   </div>
 
-                  {/* Action Buttons matching the reference design */}
-                  {/* <div className="flex items-center gap-3">
-                    <a
-                      href="#contact-us"
-                      className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-white/30 bg-white/10 px-6 sm:px-7 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white backdrop-blur-md transition-all duration-200 hover:border-teal-400 hover:bg-teal-500 hover:text-white hover:shadow-[0_6px_24px_rgba(13,148,136,0.4)]"
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap items-center gap-3">
+                    <button
+                      type="button"
+                      onClick={() => open(activeService)}
+                      className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-white/30 bg-white/10 px-6 sm:px-7 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white backdrop-blur-md transition-all duration-200 hover:border-teal-400 hover:bg-teal-500 hover:text-white hover:shadow-[0_6px_24px_rgba(13,148,136,0.4)]"
                     >
                       Book Consultation <ChevronRight size={16} />
-                    </a>
-                  </div> */}
+                    </button>
+                    {activeService.clinicSlug && (
+                      <Link
+                        href={`/clinics/${activeService.clinicSlug}`}
+                        className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-full border border-teal-400/40 bg-teal-500/20 px-5 py-3 text-xs sm:text-sm font-semibold text-teal-200 backdrop-blur-md transition-all duration-200 hover:bg-teal-500/30 hover:text-white"
+                      >
+                        Visit Clinic <ArrowRight size={15} />
+                      </Link>
+                    )}
+                  </div>
                 </div>
               </div>
 

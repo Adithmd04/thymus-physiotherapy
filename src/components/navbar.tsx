@@ -2,40 +2,36 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Home,
   Info,
   HeartPulse,
   Star,
-  Mail,
   Phone,
   CalendarCheck,
 } from "lucide-react";
+import { useBooking } from "@/components/booking/BookingContext";
 
 const NAV_ITEMS = [
-  { id: "home", label: "Home", href: "#home", icon: Home },
-  { id: "about-us", label: "About", href: "#about-us", icon: Info },
-  { id: "services", label: "Services", href: "#services", icon: HeartPulse },
-  { id: "testimonials", label: "Reviews", href: "#testimonials", icon: Star },
-  { id: "contact-us", label: "Contact", href: "#contact-us", icon: Mail },
+  { id: "home", label: "Home", href: "/#home" },
+  { id: "about-us", label: "About", href: "/#about-us" },
+  { id: "services", label: "Services", href: "/#services" },
+  { id: "testimonials", label: "Reviews", href: "/#testimonials" },
+  { id: "contact-us", label: "Contact", href: "/#contact-us" },
 ];
 
 const MOBILE_ITEMS = [
-  { id: "home", label: "Home", href: "#home", icon: Home },
-  { id: "about-us", label: "About", href: "#about-us", icon: Info },
-  { id: "services", label: "Services", href: "#services", icon: HeartPulse },
-  { id: "testimonials", label: "Reviews", href: "#testimonials", icon: Star },
-  {
-    id: "contact-us",
-    label: "Book Now",
-    href: "#contact-us",
-    icon: CalendarCheck,
-  },
+  { id: "home", label: "Home", href: "/#home", icon: Home },
+  { id: "about-us", label: "About", href: "/#about-us", icon: Info },
+  { id: "services", label: "Services", href: "/#services", icon: HeartPulse },
+  { id: "testimonials", label: "Reviews", href: "/#testimonials", icon: Star },
 ];
 
 export default function Navbar() {
   const [activeId, setActiveId] = useState("home");
   const lockUntil = useRef(0);
+  const { open } = useBooking();
 
   // Scroll-spy: the last section whose top has passed ~35% of the viewport is active
   useEffect(() => {
@@ -76,20 +72,20 @@ export default function Navbar() {
       {/* Top floating bar (logo + desktop links + phone/booking) */}
       <header className="sticky top-0 z-50 px-2 pt-2 sm:px-4 opacity-97 hidden min-[901px]:block">
         <div className="mx-auto flex w-full max-w-300 items-center justify-between gap-4 rounded-xl bg-[rgba(255,255,255,0.92)] px-1 py-2 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-md sm:px-6">
-          <a
-            href="#home"
-            aria-label="Thymus Physiotherapy home"
+          <Link
+            href="/"
+            aria-label="Thymus Health home"
             className="flex items-center"
           >
             <Image
-              src="/images/thymusLogo_no_bg.png"
-              alt="Thymus Physiotherapy"
+              src="/images/thymus_health_noBg_logo.png"
+              alt="Thymus Health"
               width={160}
               height={90}
               priority
               className="block h-10 w-auto rounded-lg object-contain sm:h-11.5"
             />
-          </a>
+          </Link>
 
           <nav
             aria-label="Main navigation"
@@ -98,7 +94,7 @@ export default function Navbar() {
             {NAV_ITEMS.map((item) => {
               const active = activeId === item.id;
               return (
-                <a
+                <Link
                   key={item.id}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
@@ -112,7 +108,7 @@ export default function Navbar() {
                       active ? "w-full" : "w-0"
                     }`}
                   />
-                </a>
+                </Link>
               );
             })}
           </nav>
@@ -125,7 +121,11 @@ export default function Navbar() {
               <Phone size={15} />
               +91 81388 63889
             </a>
-            <button className="inline-flex items-center gap-2 whitespace-nowrap rounded-xl bg-[#0d9488] px-4 py-1.5 text-sm font-semibold text-white transition-[background,border-color,transform,box-shadow] duration-200 hover:bg-[#0f766e]">
+            <button
+              type="button"
+              onClick={() => open()}
+              className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl bg-[#0d9488] px-4 py-1.5 text-sm font-semibold text-white transition-[background,border-color,transform,box-shadow] duration-200 hover:bg-[#0f766e]"
+            >
               Book Now
             </button>
           </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
             const Icon = item.icon;
             return (
               <li key={item.id} className="flex-1">
-                <a
+                <Link
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={`mx-auto flex w-16 flex-col items-center gap-1 rounded-2xl py-2 text-[0.7rem] font-semibold transition-colors ${
@@ -154,10 +154,20 @@ export default function Navbar() {
                 >
                   <Icon size={22} strokeWidth={active ? 2.4 : 1.8} />
                   {item.label}
-                </a>
+                </Link>
               </li>
             );
           })}
+          <li className="flex-1">
+            <button
+              type="button"
+              onClick={() => open()}
+              className="mx-auto flex w-16 flex-col items-center gap-1 rounded-2xl py-2 text-[0.7rem] font-semibold text-[#475569] transition-colors hover:text-[#0d9488]"
+            >
+              <CalendarCheck size={22} strokeWidth={1.8} />
+              Book Now
+            </button>
+          </li>
         </ul>
       </nav>
     </>

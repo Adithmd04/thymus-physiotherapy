@@ -45,18 +45,18 @@ export default function About() {
 
             {/* Heading */}
             <h2 className="max-w-145 text-[clamp(2.25rem,4vw,3.6rem)] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#0f172a]">
-              Your Recovery is
+              Your Health & Well-being
               <br />
-              Our Priority
+              Is Our Priority
             </h2>
 
             {/* Description */}
             <p className="mt-7 max-w-142.5 text-[1.05rem] leading-[1.85] text-[#64748b]">
-              At Thymus Physiotherapy, we combine advanced techniques with
-              compassionate care to help you move better, feel better, and live
-              a pain-free life. Our approach is focused on understanding your
-              needs and creating personalised treatment plans that support
-              lasting recovery.
+              At Thymus Health, we are a multidisciplinary healthcare network
+              dedicated to compassionate, patient-first care. Through our specialised
+              clinics — including Thymus Physiotherapy, Thymus Dental, and
+              Thymus Pregnancy Care — we unite clinical excellence and personalised
+              attention to help you move better, feel better, and live better.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function About() {
             <div className="relative overflow-hidden rounded-3xl shadow-[0_18px_50px_rgba(15,23,42,0.12)]">
               <Image
                 src="/images/clinic.jpg"
-                alt="Thymus Physiotherapy Clinic Interior"
+                alt="Thymus Health Clinic Interior"
                 width={700}
                 height={520}
                 priority

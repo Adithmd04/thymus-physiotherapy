@@ -2,14 +2,17 @@
 
 import Image from "next/image";
 import { ChevronRight, CircleCheckBig } from "lucide-react";
+import { useBooking } from "@/components/booking/BookingContext";
 
 const TRUST_POINTS = [
-  "Advanced Treatment",
-  "Expert Consultation",
-  "Home Based Care",
+  "Physiotherapy & Rehab",
+  "Dental Excellence",
+  "Pregnancy & Mother Care",
 ];
 
 export default function Hero() {
+  const { open } = useBooking();
+
   return (
     <section
       id="home"
@@ -18,32 +21,36 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-12 px-6 min-[901px]:grid-cols-2">
         {/* Left copy */}
         <div className="animate-fade-up">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0d9488]">
+            Thymus Health Network
+          </p>
           <h1 className="mb-1 text-[clamp(2.3rem,4.5vw,3.6rem)] font-black leading-[1.1] text-[#0f172a]">
-            Expert Care.
+            Healthcare Designed
           </h1>
           <h1 className="mb-5 text-[clamp(2.3rem,4.5vw,3.6rem)] font-black leading-[1.1] text-[#0d9488]">
-            Stronger You.
+            Around You.
           </h1>
 
           <p className="mb-7 max-w-[460px] text-base leading-[1.7] text-[#475569]">
-            Personalized physiotherapy treatment to help you recover faster,
-            restore natural mobility, and return with confidence to the
-            activities you love.
+            Comprehensive, evidence-based care delivered across specialized
+            clinics. From advanced physiotherapy to dental wellness and
+            maternal healthcare, your wellbeing is our shared purpose.
           </p>
 
           {/* CTA Buttons */}
           <div className="mb-8 flex flex-wrap items-center gap-3.5">
-            <a
-              href="#contact-us"
+            <button
+              type="button"
+              onClick={() => open()}
               className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl border-2 border-[#0d9488] bg-[#0d9488] px-6 py-3 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(13,148,136,0.3)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0f766e] hover:bg-[#0f766e] hover:shadow-[0_6px_20px_rgba(13,148,136,0.4)]"
             >
               Book an Appointment <ChevronRight size={16} />
-            </a>
+            </button>
             <a
-              href="#services"
+              href="#clinics"
               className="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-xl border-2 border-[#cbd5e1] bg-white/70 px-6 py-3 text-sm font-semibold text-[#0f172a] backdrop-blur-xs transition-all duration-200 hover:-translate-y-0.5 hover:border-[#0d9488] hover:bg-white hover:text-[#0d9488]"
             >
-              Our Services <ChevronRight size={16} />
+              Our Clinics <ChevronRight size={16} />
             </a>
           </div>
 

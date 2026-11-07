@@ -1,26 +1,18 @@
+import type { ReactNode } from "react";
+
+// Re-export all types from their dedicated modules
+export type { ServiceItem, TreatmentItem } from "./service";
+export type { Clinic, WorkingHours } from "./clinic";
+export type {
+  BookingProvider,
+  BookingState,
+  BookingStep,
+  BookingMethod,
+  ProviderType,
+} from "./booking";
+
 export interface MetricItem {
-  icon: React.ReactNode;
+  icon: ReactNode;
   value: string;
   label: string;
-}
-
-export interface ServiceItem {
-  id: string;
-  title: string;
-  subtitle: string;
-  shortDesc: string;
-  fullDesc: string;
-  image: string;
-  tag: string;
-  highlights: string[];
-}
-
-export interface TreatmentItem {
-  id: string;
-  title: string;
-  subtitle: string;
-  shortDesc: string;
-  fullDesc: string;
-  tag: string;
-  highlights: string[];
 }

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { APP_NAME } from "@/constants";
+import { APP_NAME, APP_DESCRIPTION } from "@/constants";
+import AppProviders from "@/components/providers/AppProviders";
 
 export const metadata: Metadata = {
-  title: APP_NAME,
-  description: "",
+  title: {
+    default: APP_NAME,
+    template: `%s | ${APP_NAME}`,
+  },
+  description: APP_DESCRIPTION,
   icons: {
     apple: "/images/apple-touch-icon.png",
     icon: [
@@ -38,7 +42,7 @@ export default function RootLayout({
       className="scroll-smooth font-[Inter,system-ui,sans-serif] antialiased"
     >
       <body className="bg-white text-[#0f172a] leading-[1.6] pb-20 min-[901px]:pb-0">
-        {children}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
