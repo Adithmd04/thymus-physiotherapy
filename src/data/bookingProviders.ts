@@ -24,6 +24,36 @@ export const BOOKING_PROVIDERS: BookingProvider[] = [
     whatsapp: "918138863889",
     phone: "+91 81388 63889",
   },
+  {
+    id: "thymus-dental",
+    name: "Thymus Dental",
+    type: "thymus",
+    clinicSlug: "dental",
+    supportedServices: [
+      "dental-restoration",
+      "teeth-cleaning",
+    ],
+    address:
+      "Near Sacred Heart Church, Poovarani, Pala - Ponkunnam Road, Kottayam",
+    bookingMethod: "whatsapp",
+    whatsapp: "918138863889",
+    phone: "+91 81388 63889",
+  },
+  {
+    id: "thymus-pregnancy-care",
+    name: "Thymus Pregnancy Care",
+    type: "thymus",
+    clinicSlug: "pregnancy-care",
+    supportedServices: [
+      "prenatal-care",
+      "postnatal-care",
+    ],
+    address:
+      "Near Sacred Heart Church, Poovarani, Pala - Ponkunnam Road, Kottayam",
+    bookingMethod: "whatsapp",
+    whatsapp: "918138863889",
+    phone: "+91 81388 63889",
+  },
 
   // ─── External providers (example) ──────────────────
   {

@@ -37,8 +37,7 @@ export default function ClinicContact({ clinic }: ClinicContactProps) {
     const matchingProvider = BOOKING_PROVIDERS.find(
       (p) => p.clinicSlug === clinic.slug || p.id === clinic.id,
     );
-    const firstService = clinic.services && clinic.services.length > 0 ? clinic.services[0] : undefined;
-    open(firstService, matchingProvider);
+    open(undefined, matchingProvider, clinic.slug);
   };
 
   return (

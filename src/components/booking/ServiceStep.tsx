@@ -9,7 +9,11 @@ export default function ServiceStep() {
   const { state, selectService } = useBooking();
   const [search, setSearch] = useState("");
 
-  const filtered = ALL_SERVICES.filter(
+  const baseServices = state.clinicSlug
+    ? ALL_SERVICES.filter((s) => s.clinicSlug === state.clinicSlug)
+    : ALL_SERVICES;
+
+  const filtered = baseServices.filter(
     (s) =>
       s.title.toLowerCase().includes(search.toLowerCase()) ||
       s.tag.toLowerCase().includes(search.toLowerCase()),
@@ -39,7 +43,9 @@ export default function ServiceStep() {
           What service are you looking for?
         </h3>
         <p className="text-sm text-[#64748b]">
-          Select the type of care you need
+          {state.clinicSlug
+            ? `Select a service from ${groupLabels[state.clinicSlug] || state.clinicSlug}`
+            : "Select the type of care you need"}
         </p>
       </div>
 

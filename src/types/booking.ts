@@ -24,6 +24,7 @@ export interface BookingState {
   date: Date | null;
   time: string | null;
   name: string;
+  clinicSlug: string | null;
 }
 
 export type BookingStep =

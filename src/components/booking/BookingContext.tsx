@@ -13,7 +13,7 @@ import type { BookingProvider } from "@/types/booking";
 
 interface BookingContextValue {
   isOpen: boolean;
-  open: (initialService?: ServiceItem, initialProvider?: BookingProvider) => void;
+  open: (initialService?: ServiceItem, initialProvider?: BookingProvider, clinicSlug?: string) => void;
   close: () => void;
   state: BookingState;
   setStep: (step: BookingStep) => void;
@@ -33,6 +33,7 @@ const initialState: BookingState = {
   date: null,
   time: null,
   name: "",
+  clinicSlug: null,
 };
 
 const BookingContext = createContext<BookingContextValue | null>(null);
@@ -41,15 +42,20 @@ export function BookingProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = useState<BookingState>(initialState);
 
-  const open = useCallback((initialService?: ServiceItem, initialProvider?: BookingProvider) => {
-    setState({
-      ...initialState,
-      service: initialService ?? null,
-      provider: initialProvider ?? null,
-      step: "service",
-    });
-    setIsOpen(true);
-  }, []);
+  const open = useCallback(
+    (initialService?: ServiceItem, initialProvider?: BookingProvider, clinicSlug?: string) => {
+      const resolvedClinicSlug = clinicSlug ?? initialService?.clinicSlug ?? null;
+      setState({
+        ...initialState,
+        service: initialService ?? null,
+        provider: initialProvider ?? null,
+        clinicSlug: resolvedClinicSlug,
+        step: "service",
+      });
+      setIsOpen(true);
+    },
+    [],
+  );
 
   const close = useCallback(() => {
     setIsOpen(false);

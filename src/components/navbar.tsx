@@ -16,7 +16,6 @@ import { useBooking } from "@/components/booking/BookingContext";
 const NAV_ITEMS = [
   { id: "home", label: "Home", href: "/#home" },
   { id: "about-us", label: "About", href: "/#about-us" },
-  { id: "services", label: "Services", href: "/#services" },
   { id: "testimonials", label: "Reviews", href: "/#testimonials" },
   { id: "contact-us", label: "Contact", href: "/#contact-us" },
 ];
@@ -24,7 +23,6 @@ const NAV_ITEMS = [
 const MOBILE_ITEMS = [
   { id: "home", label: "Home", href: "/#home", icon: Home },
   { id: "about-us", label: "About", href: "/#about-us", icon: Info },
-  { id: "services", label: "Services", href: "/#services", icon: HeartPulse },
   { id: "testimonials", label: "Reviews", href: "/#testimonials", icon: Star },
 ];
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Sparkles, Building2 } from "lucide-react";
+import { ArrowRight, ChevronRight, Building2 } from "lucide-react";
 import { CLINICS } from "@/data/clinics";
 import { useBooking } from "@/components/booking/BookingContext";
 import { BOOKING_PROVIDERS } from "@/data/bookingProviders";
@@ -12,14 +12,12 @@ export default function ClinicsOverview() {
 
   const handleBookClinic = (clinicSlug: string) => {
     const provider = BOOKING_PROVIDERS.find((p) => p.clinicSlug === clinicSlug);
-    const clinic = CLINICS.find((c) => c.slug === clinicSlug);
-    const service = clinic?.services?.[0];
-    open(service, provider);
+    open(undefined, provider, clinicSlug);
   };
 
   return (
     <section id="clinics" className="py-16 md:py-24">
-      <div className="mx-auto w-full max-w-[1200px] px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-300 px-6 lg:px-8">
         {/* Section Heading */}
         <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
           <div className="mb-3 flex items-center justify-center gap-3">
