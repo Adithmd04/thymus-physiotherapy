@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronRight, Building2 } from "lucide-react";
-import { CLINICS } from "@/data/clinics";
+import { CLINICS, isClinicOperational } from "@/data/clinics";
 import { useBooking } from "@/components/booking/BookingContext";
 import { BOOKING_PROVIDERS } from "@/data/bookingProviders";
 
@@ -11,6 +11,7 @@ export default function ClinicsOverview() {
   const { open } = useBooking();
 
   const handleBookClinic = (clinicSlug: string) => {
+    if (!isClinicOperational(clinicSlug)) return;
     const provider = BOOKING_PROVIDERS.find((p) => p.clinicSlug === clinicSlug);
     open(undefined, provider, clinicSlug);
   };
@@ -34,9 +35,10 @@ export default function ClinicsOverview() {
           </h2>
 
           <p className="mt-3 text-sm leading-6 text-[#64748b] md:text-base">
-            Each Thymus clinic operates with focused clinical expertise, modern
-            facilities, and dedicated practitioners committed to your complete
-            recovery and lifelong wellness.
+            Thymus Physiotherapy is open today in Pala, Kottayam, with Thymus
+            Dental and Thymus Pregnancy Care coming soon. Each clinic is built
+            around focused clinical expertise, modern facilities, and dedicated
+            practitioners.
           </p>
         </div>
 
@@ -112,14 +114,23 @@ export default function ClinicsOverview() {
                     />
                   </Link>
 
-                  <button
-                    type="button"
-                    onClick={() => handleBookClinic(clinic.slug)}
-                    className="inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-[#0d9488] px-3.5 py-2 text-xs font-semibold text-white shadow-xs transition-colors hover:bg-[#0f766e]"
-                  >
-                    Book Now
-                    <ChevronRight size={14} />
-                  </button>
+                  {clinic.status === "upcoming" ? (
+                    <span
+                      aria-label={`${clinic.name} is coming soon`}
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-[#f1f5f9] px-3.5 py-2 text-xs font-semibold text-[#64748b]"
+                    >
+                      Coming Soon
+                    </span>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => handleBookClinic(clinic.slug)}
+                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-xl bg-[#0d9488] px-3.5 py-2 text-xs font-semibold text-white shadow-xs transition-colors hover:bg-[#0f766e]"
+                    >
+                      Book Now
+                      <ChevronRight size={14} />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

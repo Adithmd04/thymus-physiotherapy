@@ -53,10 +53,11 @@ export default function About() {
             {/* Description */}
             <p className="mt-7 max-w-142.5 text-[1.05rem] leading-[1.85] text-[#64748b]">
               At Thymus Health, we are a multidisciplinary healthcare network
-              dedicated to compassionate, patient-first care. Through our specialised
-              clinics — including Thymus Physiotherapy, Thymus Dental, and
-              Thymus Pregnancy Care — we unite clinical excellence and personalised
-              attention to help you move better, feel better, and live better.
+              dedicated to compassionate, patient-first care. Through our
+              specialised clinics — including Thymus Physiotherapy, Thymus
+              Dental, and Thymus Pregnancy Care — we unite clinical excellence
+              and personalised attention to help you move better, feel better,
+              and live better.
             </p>
           </div>
 

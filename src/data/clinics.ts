@@ -10,6 +10,7 @@ export const CLINICS: Clinic[] = [
   {
     id: "thymus-physiotherapy",
     slug: "physiotherapy",
+    status: "operational",
     name: "Thymus Physiotherapy",
     tagline: "Expert care. Stronger you.",
     description:
@@ -38,6 +39,7 @@ export const CLINICS: Clinic[] = [
   {
     id: "thymus-dental",
     slug: "dental",
+    status: "upcoming",
     name: "Thymus Dental",
     tagline: "Your smile, our care.",
     description:
@@ -59,6 +61,7 @@ export const CLINICS: Clinic[] = [
   {
     id: "thymus-pregnancy-care",
     slug: "pregnancy-care",
+    status: "upcoming",
     name: "Thymus Pregnancy Care",
     tagline: "Caring for you and your baby.",
     description:
@@ -82,6 +85,12 @@ export const CLINICS: Clinic[] = [
 /** Find a clinic by its URL slug */
 export function getClinicBySlug(slug: string): Clinic | undefined {
   return CLINICS.find((c) => c.slug === slug);
+}
+
+/** True unless the clinic is flagged as upcoming (unknown slugs are not blocked) */
+export function isClinicOperational(slug?: string): boolean {
+  const clinic = CLINICS.find((c) => c.slug === slug);
+  return !clinic || clinic.status === "operational";
 }
 
 /** Get all clinic slugs (useful for generateStaticParams) */

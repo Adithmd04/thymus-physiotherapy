@@ -6,8 +6,8 @@ import { useBooking } from "@/components/booking/BookingContext";
 
 const TRUST_POINTS = [
   "Physiotherapy & Rehab",
-  "Dental Excellence",
-  "Pregnancy & Mother Care",
+  "Dental (Coming Soon)",
+  "Pregnancy (Coming Soon)",
 ];
 
 export default function Hero() {
@@ -21,20 +21,19 @@ export default function Hero() {
       <div className="mx-auto grid w-full max-w-300 grid-cols-1 items-center gap-12 px-6 min-[901px]:grid-cols-2">
         {/* Left copy */}
         <div className="animate-fade-up">
-          <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#0d9488]">
-            Thymus Health Network
-          </p>
-          <h1 className="mb-1 text-[clamp(2.3rem,4.5vw,3.6rem)] font-black leading-[1.1] text-[#0f172a]">
-            Healthcare Designed
-          </h1>
-          <h1 className="mb-5 text-[clamp(2.3rem,4.5vw,3.6rem)] font-black leading-[1.1] text-[#0d9488]">
-            Around You.
+          <h1 className="mb-5 text-[clamp(2.3rem,4.5vw,3.6rem)] font-black leading-[1.1]">
+            <span className="mb-2 block text-xs font-bold uppercase leading-[1.6] tracking-[0.18em] text-[#0d9488]">
+              Thymus Health · Pala, Kottayam
+            </span>{" "}
+            <span className="mb-1 block text-[#0f172a]">Healthcare Designed</span>{" "}
+            <span className="block text-[#0d9488]">Around You.</span>
           </h1>
 
           <p className="mb-7 max-w-[460px] text-base leading-[1.7] text-[#475569]">
-            Comprehensive, evidence-based care delivered across specialized
-            clinics. From advanced physiotherapy to dental wellness and
-            maternal healthcare, your wellbeing is our shared purpose.
+            Thymus Health provides evidence-based physiotherapy and
+            rehabilitation in Pala, Kottayam, Kerala. Our patient-focused
+            physiotherapy clinic offers personalised care, with dental and
+            pregnancy care clinics planned next.
           </p>
 
           {/* CTA Buttons */}
@@ -111,7 +110,7 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-2xl border border-white/80 bg-white shadow-[0_16px_45px_rgba(15,23,42,0.12)]">
               <Image
                 src="/images/hero.jpg"
-                alt="Physiotherapy treatment session"
+                alt="Physiotherapy treatment session at Thymus Health physiotherapy clinic in Pala"
                 width={800}
                 height={533}
                 className="h-auto w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
@@ -129,7 +128,7 @@ export default function Hero() {
                   Personalized Care
                 </p>
                 <p className="text-sm font-bold text-[#0f172a]">
-                  98% Recovery Rate
+                  Evidence-Based Care
                 </p>
               </div>
             </div>

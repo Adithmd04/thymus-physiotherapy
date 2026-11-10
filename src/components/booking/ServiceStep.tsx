@@ -3,6 +3,7 @@
 import { Search } from "lucide-react";
 import { useState } from "react";
 import { ALL_SERVICES } from "@/data/services";
+import { isClinicOperational } from "@/data/clinics";
 import { useBooking } from "./BookingContext";
 
 export default function ServiceStep() {
@@ -11,7 +12,7 @@ export default function ServiceStep() {
 
   const baseServices = state.clinicSlug
     ? ALL_SERVICES.filter((s) => s.clinicSlug === state.clinicSlug)
-    : ALL_SERVICES;
+    : ALL_SERVICES.filter((s) => isClinicOperational(s.clinicSlug));
 
   const filtered = baseServices.filter(
     (s) =>

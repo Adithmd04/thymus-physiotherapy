@@ -5,9 +5,14 @@ export interface WorkingHours {
   hours: string;
 }
 
+export type ClinicStatus = "operational" | "upcoming";
+
 export interface Clinic {
   id: string;
   slug: string;
+
+  /** "upcoming" clinics are not open yet and must not be bookable */
+  status: ClinicStatus;
 
   name: string;
   tagline: string;

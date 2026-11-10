@@ -17,14 +17,17 @@ import { useBooking } from "@/components/booking/BookingContext";
 const FOOTER_LINKS = {
   "Our Clinics": [
     { label: "Thymus Physiotherapy", href: "/clinics/physiotherapy" },
-    { label: "Thymus Dental", href: "/clinics/dental" },
-    { label: "Thymus Pregnancy Care", href: "/clinics/pregnancy-care" },
+    { label: "Thymus Dental (Coming Soon)", href: "/clinics/dental" },
+    {
+      label: "Thymus Pregnancy Care (Coming Soon)",
+      href: "/clinics/pregnancy-care",
+    },
   ],
   "Quick Links": [
     { label: "About Thymus Health", href: "/#about-us" },
-    { label: "Our Services", href: "/#services" },
+    { label: "Our Clinics", href: "/#clinics" },
     { label: "Our Treatments", href: "/#treatments" },
-    { label: "Patient Reviews", href: "/#testimonials" },
+    { label: "Patient Reviews", href: "/#reviews" },
   ],
 };
 
@@ -41,7 +44,7 @@ export default function Contact() {
   const { open } = useBooking();
 
   return (
-    <div id="contact-us">
+    <div id="contacts">
       {/* ── CTA BANNER ────────────────────────── */}
       <section className="bg-[linear-gradient(135deg,#0f766e_0%,#0d9488_60%,#14b8a6_100%)] py-14">
         <div className="mx-auto flex w-full max-w-300 flex-wrap items-center justify-between gap-8 px-6">
@@ -103,7 +106,9 @@ export default function Contact() {
               </div>
 
               <p className="mb-5 text-[0.83rem] leading-[1.7]">
-                Helping you move better, feel better, and live better across all our specialized clinics.
+                Thymus Health provides physiotherapy and rehabilitation services
+                in Pala, Kottayam, Kerala — helping you move better, feel
+                better, and live better.
               </p>
 
               <div className="flex gap-3">
@@ -125,9 +130,9 @@ export default function Contact() {
             {/* Quick links & Clinics */}
             {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
               <div key={heading}>
-                <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.06em] text-white">
+                <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.06em] text-white">
                   {heading}
-                </h4>
+                </h3>
 
                 <ul className="flex list-none flex-col gap-2 p-0">
                   {links.map(({ label, href }) => (
@@ -146,9 +151,9 @@ export default function Contact() {
 
             {/* Contact details */}
             <div>
-              <h4 className="mb-4 text-sm font-bold uppercase tracking-[0.06em] text-white">
+              <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.06em] text-white">
                 Contact Us
-              </h4>
+              </h3>
 
               <div className="flex flex-col gap-3 text-[0.83rem]">
                 <div className="flex gap-2">

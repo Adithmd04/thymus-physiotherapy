@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from "@/icons";
 
+// NOTE: placeholder review data (generic names) — replace with verified patient reviews.
 const TESTIMONIALS = [
   {
     name: "Sarah M.",
@@ -67,7 +68,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="overflow-hidden py-14 md:py-18">
+    <section id="reviews" className="overflow-hidden py-14 md:py-18">
       <div className="mx-auto w-full max-w-300 px-6">
         {/* Header */}
         <div className="mb-10 text-center">

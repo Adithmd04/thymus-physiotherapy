@@ -5,25 +5,36 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Home,
-  Info,
-  HeartPulse,
+  Building2,
+  Stethoscope,
   Star,
+  PhoneCall,
   Phone,
   CalendarCheck,
 } from "lucide-react";
 import { useBooking } from "@/components/booking/BookingContext";
 
+// Clinics and Treatments currently scroll to their homepage sections;
+// point these hrefs at the new pages once they exist.
 const NAV_ITEMS = [
   { id: "home", label: "Home", href: "/#home" },
-  { id: "about-us", label: "About", href: "/#about-us" },
-  { id: "testimonials", label: "Reviews", href: "/#testimonials" },
-  { id: "contact-us", label: "Contact", href: "/#contact-us" },
+  { id: "clinics", label: "Clinics", href: "/#clinics" },
+  { id: "treatments", label: "Treatments", href: "/#treatments" },
+  { id: "reviews", label: "Reviews", href: "/#reviews" },
+  { id: "contacts", label: "Contacts", href: "/#contacts" },
 ];
 
 const MOBILE_ITEMS = [
   { id: "home", label: "Home", href: "/#home", icon: Home },
-  { id: "about-us", label: "About", href: "/#about-us", icon: Info },
-  { id: "testimonials", label: "Reviews", href: "/#testimonials", icon: Star },
+  { id: "clinics", label: "Clinics", href: "/#clinics", icon: Building2 },
+  {
+    id: "treatments",
+    label: "Treatments",
+    href: "/#treatments",
+    icon: Stethoscope,
+  },
+  { id: "reviews", label: "Reviews", href: "/#reviews", icon: Star },
+  { id: "contacts", label: "Contacts", href: "/#contacts", icon: PhoneCall },
 ];
 
 export default function Navbar() {
@@ -52,7 +63,7 @@ export default function Navbar() {
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 4
       ) {
-        current = "contact-us";
+        current = "contacts";
       }
       setActiveId(current);
     };
@@ -87,7 +98,7 @@ export default function Navbar() {
 
           <nav
             aria-label="Main navigation"
-            className="hidden items-center gap-8 min-[901px]:flex"
+            className="hidden items-center gap-6 min-[1100px]:gap-8 min-[901px]:flex"
           >
             {NAV_ITEMS.map((item) => {
               const active = activeId === item.id;
@@ -144,7 +155,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`mx-auto flex w-16 flex-col items-center gap-1 rounded-2xl py-2 text-[0.7rem] font-semibold transition-colors ${
+                  className={`mx-auto flex w-full max-w-16 flex-col items-center gap-1 rounded-2xl py-2 text-[0.65rem] font-semibold transition-colors ${
                     active
                       ? "bg-[#ccfbf1] text-[#0d9488]"
                       : "text-[#475569] hover:text-[#0d9488]"
@@ -160,7 +171,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => open()}
-              className="mx-auto flex w-16 flex-col items-center gap-1 rounded-2xl py-2 text-[0.7rem] font-semibold text-[#475569] transition-colors hover:text-[#0d9488]"
+              className="mx-auto flex w-full max-w-16 flex-col items-center gap-1 rounded-2xl py-2 text-[0.65rem] font-semibold text-[#475569] transition-colors hover:text-[#0d9488]"
             >
               <CalendarCheck size={22} strokeWidth={1.8} />
               Book Now
